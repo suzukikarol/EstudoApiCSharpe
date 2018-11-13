@@ -1,0 +1,36 @@
+﻿@model IEnumerable<SistemaEstoque.Models.Categoria>
+
+@{
+    ViewBag.Title = "Index";
+    if (Session["userId"] == null)
+    {
+        Response.Redirect("~/Account/Login");
+    }
+}
+
+<h2>Lista de Categorias</h2>
+
+<p>
+    @Html.ActionLink("Adicionar", "AddOuEdiTCaT")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoCategoria)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoCategoria)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "AddOuEdiTCaT", new { id=item.IdCategoria }) |
+            
+            @Html.ActionLink("Deletar", "DeletarCategoria", new { id=item.IdCategoria })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-4">
+            <h1>Produtos</h1>
+            <p class="lead">Veja quais pordutos estão cadastrados, e caso queira, cadastre mais alguns!</p>
+
+            <p>
+                @Html.ActionLink("Veja nossa lista de produtos", "Index", "Produto")
+            </p>
+            </div>
+        </div>
+    </div>
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-4">
+            <h1>Categorias</h1>
+            <p class="lead">Guia de categorias cadastradas em nosso sistema.</p>
+            <p>
+                @Html.ActionLink("Veja nossas categorias","Index", "Categoria")
+            </p>
+        </div>
+     </div>
+ </div>
+
